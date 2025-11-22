@@ -1,4 +1,5 @@
 import './App.css'
+import Card from './components/Card/Card'
 import Header from './components/Header/Header'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
           Começando a estrutura do projeto React + Typescript.
         </p>
         <Header />
+        <Card />
       </div>
     </>
   )

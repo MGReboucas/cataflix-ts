@@ -1,0 +1,8 @@
+.card_article{
+  display: flex;
+  flex-direction: column;
+}
+
+.card_title{
+  font-size: 1.2rem;
+}
