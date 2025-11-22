@@ -1,0 +1,8 @@
+.header_Div{
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo_catalogo{
+  font-size: 1.2rem;
+}
