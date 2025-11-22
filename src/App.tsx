@@ -1,4 +1,5 @@
 import './App.css'
+import Header from './components/Header/Header'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <p className="subtitulo_front_end">
           Começando a estrutura do projeto React + Typescript.
         </p>
+        <Header />
       </div>
     </>
   )
