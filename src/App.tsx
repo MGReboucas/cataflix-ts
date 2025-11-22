@@ -1,9 +1,9 @@
 function App() {
   return (
     <>
-      <div className="flex column">
-        <p className="text-2xl">Trabalho Front End AV2</p>
-        <p className="text-base">Trabalho Front End AV2</p>
+      <div>
+        <h2>Trabalho Front End AV2</h2>
+        <p>Começando a estrutura do projeto React + Typescript.</p>
       </div>
     </>
   )
