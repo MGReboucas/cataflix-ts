@@ -1,14 +1,9 @@
 {
   "items": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Filme 1",
       "description": "Descrição do primeiro filme"
-    },
-    {
-      "id": 2,
-      "title": "Filme 2",
-      "description": "Descrição do segundo filme"
     }
   ]
 }

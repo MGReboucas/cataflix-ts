@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './List.css'
 import Header from '../../components/Header/Header'
 import Card from '../../components/Card/Card'
-import { getItems } from '../../services/List'
+import { getItems, deleteItem } from '../../services/List'
 import type { Item } from '../../services/List'
 
 export default function List() {
@@ -23,6 +23,15 @@ export default function List() {
     }
     fetchData()
   }, [])
+
+  async function handleDelete(id: number) {
+    try {
+      await deleteItem(id)
+      setItems(prevItems => prevItems.filter(item => item.id !== id))
+    } catch {
+      setError('Erro ao deletar item')
+    }
+  }
 
   if (loading) {
     return (
@@ -50,8 +59,10 @@ export default function List() {
           return (
             <Card
               key={cardKey}
+              id={item.id!}
               title={item.title}
               description={item.description}
+              onDelete={handleDelete}
             />
           )
         })}
