@@ -9,7 +9,7 @@ export type Item = {
 export async function getItems(): Promise<Item[]> {
   const response = await fetch(`${API_URL}/items`)
   if (!response.ok) {
-    throw new Error('Erro ao criar item')
+    throw new Error('Erro ao criar itens')
   }
   return response.json()
 }
