@@ -1,19 +1,52 @@
+import { useParams, useNavigate } from 'react-router-dom'
 import type { FormEvent } from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './Form.css'
-import { createItem } from '../../services/List'
+import { createItem, getItems, updateItem } from '../../services/List'
 
 export default function Form() {
+  const { id } = useParams()
+  const navigate = useNavigate()
+  const isEdit = Boolean(id)
+
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [isSubmitting, setSubmitting] = useState(false)
+  const [isLoading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState('')
+
+  useEffect(() => {
+    async function fetchData() {
+      if (!isEdit) {
+        setLoading(false)
+        return
+      }
+
+      try {
+        const items = await getItems()
+        const itemToEdit = items.find(item => String(item.id) === id)
+
+        if (!itemToEdit) {
+          setError('Item não encontrado')
+          return
+        }
+        setTitle(itemToEdit.title)
+        setDescription(itemToEdit.description ?? '')
+      } catch {
+        setError('Erro ao carregar item')
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchData()
+  }, [id, isEdit])
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault()
     setError(null)
     setSuccess('')
+
     if (!title.trim()) {
       setError('Titulo é obrigatorio')
       return
@@ -21,25 +54,41 @@ export default function Form() {
     setSubmitting(true)
 
     try {
-      await createItem({
-        title,
-        description,
-      })
+      if (isEdit) {
+        await updateItem(Number(id), {
+          title,
+          description,
+        })
+        setSuccess('Item cadastrado com sucesso')
+      } else {
+        await createItem({
+          title,
+          description,
+        })
+        setSuccess('Item cadastrado com sucesso')
+        setTitle('')
+        setDescription('')
+      }
 
-      setSuccess('Item cadastrado com sucesso')
-      setTitle('')
-      setDescription('')
+      navigate('/')
     } catch {
-      setError('Erro ao salvar o item, Tente novamente')
+      setError('Erro ao salvar o item, tente novamente')
     } finally {
       setSubmitting(false)
     }
   }
 
+  if (isLoading) {
+    return (
+      <div className="form-div">
+        <p>Carregando ...</p>
+      </div>
+    )
+  }
+
   return (
     <div className="form-div">
-      <h2 className="">Novo Item</h2>
-
+      <h2>{isEdit ? 'Editar item' : 'Novo item'}</h2>
       <form className="form" onSubmit={handleSubmit}>
         <div className="form-control">
           <label htmlFor="title"></label>

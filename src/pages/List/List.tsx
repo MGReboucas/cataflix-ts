@@ -36,7 +36,6 @@ export default function List() {
   if (loading) {
     return (
       <div className="list">
-        <Header />
         <p>Carregando...</p>
       </div>
     )
@@ -44,14 +43,12 @@ export default function List() {
   if (error) {
     return (
       <div className="list">
-        <Header />
         <p>{error}</p>
       </div>
     )
   }
   return (
     <div className="list">
-      <Header />
       <h2>Lista de itens</h2>
       <div>
         {items.map(item => {

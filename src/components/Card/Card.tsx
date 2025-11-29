@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Card.css'
 
 type CardsProps = {
@@ -13,11 +14,14 @@ export default function Card({ id, title, description, onDelete }: CardsProps) {
       <h2 className="card_title">{title}</h2>
       {description && <p> {description}</p>}
 
-      {onDelete && (
-        <button type="button" onClick={() => onDelete(id)}>
-          Excluir
-        </button>
-      )}
+      <div>
+        <Link to={`/form/${id}`}>Editar</Link>
+        {onDelete && (
+          <button type="button" onClick={() => onDelete(id)}>
+            Excluir
+          </button>
+        )}
+      </div>
     </article>
   )
 }
