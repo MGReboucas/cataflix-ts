@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import './List.css'
-import Header from '../../components/Header/Header'
 import Card from '../../components/Card/Card'
 import { getItems, deleteItem } from '../../services/List'
 import type { Item } from '../../services/List'
