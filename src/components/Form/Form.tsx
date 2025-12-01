@@ -55,11 +55,13 @@ export default function Form() {
 
     try {
       if (isEdit) {
-        await updateItem(Number(id), {
+        await updateItem(id as string, {
           title,
           description,
         })
         setSuccess('Item cadastrado com sucesso')
+        setTitle('')
+        setDescription('')
       } else {
         await createItem({
           title,

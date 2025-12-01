@@ -27,13 +27,16 @@ export async function createItem(data: Omit<Item, 'id'>): Promise<Item> {
 }
 
 export async function updateItem(
-  id: number,
+  id: number | string,
   data: Omit<Item, 'id'>,
 ): Promise<Item> {
   const response = await fetch(`${API_URL}/items/${id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
+    body: JSON.stringify({
+      id,
+      ...data,
+    }),
   })
   if (!response.ok) {
     throw new Error('Erro ao atualizar item')
