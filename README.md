@@ -127,4 +127,5 @@ Projeto desenvolvido para fins acadêmicos, com foco em boas práticas, componen
 ## 🎥 Inspiração
 
 🔥 **Interface levemente baseada no layout da Netflix.**
+
 mr44dev
