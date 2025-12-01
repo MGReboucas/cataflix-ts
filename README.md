@@ -42,22 +42,22 @@ O sistema utiliza um _fake backend_ com **json-server** para simular uma API RES
 
 ## 📁 Estrutura do Projeto
 
+```bash
 src/
-│
 ├── components/
 │ ├── Header/
 │ ├── Card/
-│ └── Form/ ← Form reutilizado para criar/editar filme
+│ └── Form/
 │
 ├── pages/
 │ ├── Home/
 │ └── List/
 │
 ├── services/
-│ └── List.ts ← Métodos: getItems, createItem, updateItem, deleteItem
+│ └── List.ts
 │
-├── App.tsx ← Rotas: "/", "/form", "/form/:id"
-└── index.css ← Reset + tema estilo Netflix
+├── App.tsx
+└── index.css
 
 ---
 
@@ -102,14 +102,12 @@ Frontend estilizado manualmente em CSS, **inspirado no design da Netflix**, com:
 npm install
 
 graphql
-Copiar código
 
 ### 2️⃣ Iniciar API Fake (json-server)
 
 npx json-server db.json --port 3001
 
 shell
-Copiar código
 
 ### 3️⃣ Rodar o Front-end
 
@@ -130,3 +128,4 @@ Projeto desenvolvido para fins acadêmicos, com foco em boas práticas, componen
 🔥 **Interface levemente baseada no layout da Netflix.**
 
 mr44dev
+```
