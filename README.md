@@ -1,73 +1,132 @@
-# React + TypeScript + Vite
+# 🎬 CATAFLIX
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um catálogo de filmes inspirado no layout da Netflix, desenvolvido como projeto acadêmico utilizando React + TypeScript.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 👤 Autor
 
-## React Compiler
+**Matheus Gabriel Reboucas**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📌 Sobre o Projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+O **Cataflix** é um aplicativo simples de catálogo de filmes, permitindo:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- ➕ **Adicionar** filme
+- ✏️ **Editar** filme
+- 🗑️ **Excluir** filme
+- 📄 Exibir lista em cards estilizados no padrão Netflix
+- 📱 Layout responsivo com design inspirado na Netflix e Prime Video
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+O sistema utiliza um _fake backend_ com **json-server** para simular uma API REST local.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🧰 Tecnologias e Bibliotecas Utilizadas
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### **Front-end**
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- ⚛️ **React**
+- 🟦 **TypeScript**
+- 🌐 **React Router DOM**
+- 🎨 **CSS puro** (sem Tailwind)
+- 🔄 **Fetch API** para requisições
+
+### **Back-end Fake (API)**
+
+- 📦 **json-server**
+
+---
+
+## 📁 Estrutura do Projeto
+
+src/
+│
+├── components/
+│ ├── Header/
+│ ├── Card/
+│ └── Form/ ← Form reutilizado para criar/editar filme
+│
+├── pages/
+│ ├── Home/
+│ └── List/
+│
+├── services/
+│ └── List.ts ← Métodos: getItems, createItem, updateItem, deleteItem
+│
+├── App.tsx ← Rotas: "/", "/form", "/form/:id"
+└── index.css ← Reset + tema estilo Netflix
+
+---
+
+## 🚀 Funcionalidades Detalhadas
+
+### ✔️ Cadastro de Filme
+
+- Usando o componente `Form.tsx`.
+- Envia dados via POST para o json-server.
+
+### ✔️ Edição de Filme
+
+- O mesmo Form é usado, detectando pelo `id` presente na URL.
+- Busca dados atuais, permite editar e salva via PATCH.
+
+### ✔️ Exclusão
+
+- Ícone "Excluir" no Card.
+- Requisição DELETE + atualização automática do estado.
+
+### ✔️ Listagem
+
+- Interface em cards, responsiva e com visual de catálogo.
+
+---
+
+## 🎨 Layout
+
+Frontend estilizado manualmente em CSS, **inspirado no design da Netflix**, com:
+
+- Fundo escuro (#141414)
+- Destaques em vermelho (#e50914)
+- Cards com sombra e bordas arredondadas
+- Tipografia semelhante ao serviço original
+
+---
+
+## 🏁 Como Rodar o Projeto
+
+### 1️⃣ Instalar dependências
+
+npm install
+
+graphql
+Copiar código
+
+### 2️⃣ Iniciar API Fake (json-server)
+
+npx json-server db.json --port 3001
+
+shell
+Copiar código
+
+### 3️⃣ Rodar o Front-end
+
+npm run dev
+
+yaml
+
+---
+
+## 📌 Observações
+
+Projeto desenvolvido para fins acadêmicos, com foco em boas práticas, componentização e estilização manual.
+
+---
+
+## 🎥 Inspiração
+
+🔥 **Interface levemente baseada no layout da Netflix.**
+
+mr44dev
