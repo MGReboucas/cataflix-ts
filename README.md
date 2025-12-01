@@ -6,7 +6,7 @@ Um catálogo de filmes inspirado no layout da Netflix, desenvolvido como projeto
 
 ## 👤 Autor
 
-**Matheus Gabriel Reboucas**
+**Matheus Gabriel Reboucas - 01858232**
 
 ---
 
@@ -58,6 +58,7 @@ src/
 │
 ├── App.tsx
 └── index.css
+```
 
 ---
 
@@ -128,4 +129,7 @@ Projeto desenvolvido para fins acadêmicos, com foco em boas práticas, componen
 🔥 **Interface levemente baseada no layout da Netflix.**
 
 mr44dev
+
+```
+
 ```
