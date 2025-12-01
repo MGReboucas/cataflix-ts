@@ -1,8 +1,67 @@
 .card_article{
+  background-color: #181818;
+  padding: 14px;
+  width: 190px;
+  min-height: 150px;
+  border-radius: 6px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  transition: 0.2 ease;
+  box-shadow: 0 4px 15px rgba( 0, 0, 0, 0,6);
+}
+
+.card_article:hover{
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 25px rgba( 0, 0, 0, 0.8);
 }
 
 .card_title{
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card_description{
+  font-size: 0.9rem;
+  opacity: 0.85;
+  line-height: 1.3rem;
+}
+
+.card_div{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.card_article a {
+  color: #ffffff;
+  font-size: 0.85rem;
+  opacity: 0.85;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.card_article a:hover {
+  opacity: 1;
+}
+
+.card_article button {
+  padding: 5px 10px;
+  font-size: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #e50914;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card_article button:hover {
+  background-color: #f40612;
+  transform: translateY(-2px);
 }

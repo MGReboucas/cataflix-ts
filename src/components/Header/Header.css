@@ -1,8 +1,44 @@
-.header_Div{
+.header{
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   flex-direction: column;
+  padding: 14px 32px;
+  gap: .5em;
+  background: linear-gradient(to bottom, #000 0%, #141414 70%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .titulo_catalogo{
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #e50914;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.botao_adicionar{
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #e50914;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botao_adicionar:hover{
+  background-color: #f40612;
+  transform: translateY(-2px);
+}
+
+@media screen and (min-width: 728px) {
+  .header{
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }

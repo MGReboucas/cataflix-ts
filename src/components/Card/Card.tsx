@@ -12,9 +12,9 @@ export default function Card({ id, title, description, onDelete }: CardsProps) {
   return (
     <article className="card_article">
       <h2 className="card_title">{title}</h2>
-      {description && <p> {description}</p>}
+      {description && <p className="card_description"> {description}</p>}
 
-      <div>
+      <div className="card_div">
         <Link to={`/form/${id}`}>Editar</Link>
         {onDelete && (
           <button type="button" onClick={() => onDelete(id)}>

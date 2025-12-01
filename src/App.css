@@ -1,0 +1,11 @@
+.app-root{
+  min-height: 100vh;
+  background-color: radial-gradient(circle at top, #202020 0, #141414 40%, #000 100%);
+  color: #fff;
+}
+
+.app-content{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}

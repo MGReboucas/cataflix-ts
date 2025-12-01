@@ -7,13 +7,15 @@ import Form from './components/Form/Form'
 
 export default function App() {
   return (
-    <>
+    <div className="app-root">
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/form" element={<Form />} />
-        <Route path="/form/:id" element={<Form />} />
-      </Routes>
-    </>
+      <main className="app-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/form" element={<Form />} />
+          <Route path="/form/:id" element={<Form />} />
+        </Routes>
+      </main>
+    </div>
   )
 }

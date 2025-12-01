@@ -34,22 +34,22 @@ export default function List() {
 
   if (loading) {
     return (
-      <div className="list">
+      <div className="list-wrapper">
         <p>Carregando...</p>
       </div>
     )
   }
   if (error) {
     return (
-      <div className="list">
+      <div className="list-wrapper">
         <p>{error}</p>
       </div>
     )
   }
   return (
-    <div className="list">
-      <h2>Lista de itens</h2>
-      <div>
+    <div className="list-wrapper">
+      <h2 className="list-title">Bem-vindo ao catálogo!</h2>
+      <div className="list-conteiner">
         {items.map(item => {
           const cardKey = item.id ?? `item-${item.title}`
           return (
