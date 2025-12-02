@@ -26,9 +26,9 @@ O sistema utiliza um _fake backend_ com **json-server** para simular uma API RES
 
 ## Explicação do Projeto
 
-![Cataflix](assets/cataflix.png)
+![Cataflix](./src/assets/cataflix.png)
 
-Veja o vídeo de demonstração do nosso projeto: [Assista à Explicação do GitHub do Projeto](**https://drive.google.com/file/d/1y9NGLUOjDvz3bjDtmodeitlfKPPAsZBO/view?usp=sharing**)
+Veja o vídeo de demonstração do nosso projeto: [Assista à Explicação do GitHub do Projeto](https://drive.google.com/file/d/1y9NGLUOjDvz3bjDtmodeitlfKPPAsZBO/view?usp=sharing)
 
 ---
 
